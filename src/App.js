@@ -7,19 +7,28 @@ class App extends React.Component {
     super();
 
     this.state = {
+      stateName: 'Agente',
     };
   }
 
-  changeState = () => {
+  changeState = (origin, cardName) => {
+    const { target } = origin;
 
+    if (target.value === cardName) {
+      this.setState({ stateName: target.value });
+    }
   }
 
   render() {
+    const { stateName } = this.state;
     return (
       <div>
         <h1>Valorant Trunfo</h1>
-        <Form onInputChange={ this.changeState } />
-        <Card />
+        <Form
+          onInputChange={ this.changeState }
+          cardName="oi"
+        />
+        <Card cardName={ stateName } />
       </div>
     );
   }
