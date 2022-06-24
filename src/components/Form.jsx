@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Form extends React.Component {
   preventReload = (origin) => {
@@ -6,12 +7,19 @@ class Form extends React.Component {
   };
 
   render() {
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
+      cardImage, cardRare, cardTrunfo, isSaveButtonDisabled, onInputChange,
+      onSaveButtonClick } = this.props;
+
     return (
       <>
         <form id="newAgentForm">
+          {/* NOME-------------------------------------------------------------------------------- */}
           <label htmlFor="newAgentName">
             {'Agente: '}
             <input
+              value={ cardName }
+              onChange={ onInputChange }
               type="text"
               name="newAgentName"
               id="newAgentName"
@@ -20,9 +28,12 @@ class Form extends React.Component {
             />
           </label>
           <br />
+          {/* DESC-------------------------------------------------------------------------------- */}
           <label htmlFor="newAgentDesc">
             {'Descrição: '}
             <input
+              value={ cardDescription }
+              onChange={ onInputChange }
               type="textarea"
               name="newAgentDesc"
               id="newAgentDesc"
@@ -31,9 +42,27 @@ class Form extends React.Component {
             />
           </label>
           <br />
+          {/* CLASSE-------------------------------------------------------------------------------- */}
+          <label htmlFor="newAgentClass">
+            {'Classe: '}
+            <select
+              name="newAgentClass"
+              id="newAgentClass"
+              required
+            >
+              <option value="iniciador">Iniciador</option>
+              <option value="sentinela">Sentinela</option>
+              <option value="duelista">Duelista</option>
+              <option value="controlador">Controlador</option>
+            </select>
+          </label>
+          <br />
+          {/* VELOCIDADE---------------------------------------------------------------------------- */}
           <label htmlFor="newAgentAttr1">
             {'Velocidade: '}
             <input
+              value={ cardAttr1 }
+              onChange={ onInputChange }
               type="number"
               name="newAgentAttr1"
               id="newAgentAttr1"
@@ -44,9 +73,12 @@ class Form extends React.Component {
             />
           </label>
           <br />
+          {/* INTELIGÊNCIA-------------------------------------------------------------------------- */}
           <label htmlFor="newAgentAttr2">
             {'Inteligência: '}
             <input
+              value={ cardAttr2 }
+              onChange={ onInputChange }
               type="number"
               name="newAgentAttr2"
               id="newAgentAttr2"
@@ -57,9 +89,12 @@ class Form extends React.Component {
             />
           </label>
           <br />
+          {/* TÉCNICA------------------------------------------------------------------------------- */}
           <label htmlFor="newAgentAttr3">
             {'Técnica: '}
             <input
+              value={ cardAttr3 }
+              onChange={ onInputChange }
               type="number"
               name="newAgentAttr3"
               id="newAgentAttr3"
@@ -70,9 +105,12 @@ class Form extends React.Component {
             />
           </label>
           <br />
+          {/* IMAGEM-------------------------------------------------------------------------------- */}
           <label htmlFor="newAgentPicture">
             {'Imagem (URL): '}
             <input
+              value={ cardImage }
+              onChange={ onInputChange }
               type="text"
               name="newAgentPicture"
               id="newAgentPicture"
@@ -81,9 +119,12 @@ class Form extends React.Component {
             />
           </label>
           <br />
+          {/* RARIDADE------------------------------------------------------------------------------ */}
           <label htmlFor="newAgentRarity">
             {'Raridade: '}
             <select
+              value={ cardRare }
+              onChange={ onInputChange }
               name="newAgentRarity"
               id="newAgentRarity"
               data-testid="rare-input"
@@ -95,9 +136,12 @@ class Form extends React.Component {
             </select>
           </label>
           <br />
+          {/* SUPERTRUNFO--------------------------------------------------------------------------- */}
           <label htmlFor="newAgentSuper">
             {'Super Trunfo: '}
             <input
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
               type="checkbox"
               name="newAgentSuper"
               id="newAgentSuper"
@@ -108,10 +152,11 @@ class Form extends React.Component {
         </form>
 
         <button
+          disabled={ isSaveButtonDisabled }
           type="submit"
           form="newAgentForm"
           data-testid="save-button"
-          onClick={ (origin) => this.preventReload(origin) }
+          onClick={ onSaveButtonClick }
         >
           Salvar
         </button>
@@ -119,5 +164,20 @@ class Form extends React.Component {
     );
   }
 }
+
+Form.propTypes = {
+  cardName: PropTypes.string.isRequired,
+  cardDescription: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
+  cardImage: PropTypes.string.isRequired,
+  cardRare: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
+  isSaveButtonDisabled: PropTypes.bool.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onSaveButtonClick: PropTypes.func.isRequired,
+};
 
 export default Form;
