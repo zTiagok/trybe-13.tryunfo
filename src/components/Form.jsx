@@ -39,7 +39,7 @@ class Form extends React.Component {
           </label>
           <br />
           {/* CLASSE-------------------------------------------------------------------------------- */}
-          <label htmlFor="newAgentClass">
+          {/* <label htmlFor="newAgentClass">
             {'Classe: '}
             <select
               name="newAgentClass"
@@ -52,7 +52,7 @@ class Form extends React.Component {
               <option value="controlador">Controlador</option>
             </select>
           </label>
-          <br />
+          <br /> */}
           {/* VELOCIDADE---------------------------------------------------------------------------- */}
           <label htmlFor="newAgentAttr1">
             {'Velocidade: '}

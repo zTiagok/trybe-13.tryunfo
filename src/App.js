@@ -7,28 +7,56 @@ class App extends React.Component {
     super();
 
     this.state = {
-      stateName: 'Agente',
+      stateName: '',
+      stateDesc: '',
+      stateAttr1: '',
+      stateAttr2: '',
+      stateAttr3: '',
+      stateRare: '',
+      stateTrunfo: '',
     };
   }
 
-  changeState = (origin, cardName) => {
+  changeState = (origin) => {
     const { target } = origin;
 
-    if (target.value === cardName) {
-      this.setState({ stateName: target.value });
+    switch (target.name) {
+    case 'newAgentName': this.setState({ stateName: target.value });
+      break;
+    case 'newAgentDesc': this.setState({ stateDesc: target.value });
+      break;
+    case 'newAgentAttr1': this.setState({ stateAttr1: target.value });
+      break;
+    case 'newAgentAttr2': this.setState({ stateAttr2: target.value });
+      break;
+    case 'newAgentAttr3': this.setState({ stateAttr3: target.value });
+      break;
+    case 'newAgentRarity': this.setState({ stateRare: target.value });
+      break;
+    case 'newAgentSuper': this.setState({ stateTrunfo: target.checked });
+      break;
+    default: console.log('Error');
     }
   }
 
   render() {
-    const { stateName } = this.state;
+    const { stateName, stateDesc, stateAttr1,
+      stateAttr2, stateAttr3, stateTrunfo, stateRare } = this.state;
     return (
       <div>
         <h1>Valorant Trunfo</h1>
         <Form
           onInputChange={ this.changeState }
-          cardName="oi"
         />
-        <Card cardName={ stateName } />
+        <Card
+          cardName={ stateName }
+          cardDescription={ stateDesc }
+          cardAttr1={ stateAttr1 }
+          cardAttr2={ stateAttr2 }
+          cardAttr3={ stateAttr3 }
+          cardRare={ stateRare }
+          cardTrunfo={ stateTrunfo }
+        />
       </div>
     );
   }
