@@ -1,4 +1,5 @@
 import React from 'react';
+import { array } from 'prop-types';
 import Form from './components/Form';
 import Card from './components/Card';
 
@@ -17,14 +18,7 @@ class App extends React.Component {
       stateClass: 'Iniciador',
       stateImage: '',
       hasTrunfo: false,
-      newName: '',
-      newDesc: '',
-      newImage: '',
-      newAttr1: '',
-      newAttr2: '',
-      newAttr3: '',
-      newClass: '',
-      newRare: ''
+      newCard: '',
     };
   }
 
@@ -56,7 +50,8 @@ class App extends React.Component {
 
   saveChanges = (origin) => {
     origin.preventDefault();
-    const { stateTrunfo } = this.state;
+    const { stateTrunfo, stateName, stateDesc, stateImage, stateAttr1,
+      stateAttr2, stateAttr3, stateClass, stateRare } = this.state;
 
     if (stateTrunfo) {
       this.setState({
@@ -64,7 +59,20 @@ class App extends React.Component {
       });
     }
 
+    const cardInfo = {
+      stateName,
+      stateDesc,
+      stateImage,
+      stateAttr1,
+      stateAttr2,
+      stateAttr3,
+      stateClass,
+      stateRare,
+      stateTrunfo,
+    };
+
     this.setState({
+      newCard: cardInfo,
       stateName: '',
       stateDesc: '',
       stateImage: '',
@@ -72,7 +80,8 @@ class App extends React.Component {
       stateAttr2: '0',
       stateAttr3: '0',
       stateClass: 'Iniciador',
-      stateRare: 'Normal' });
+      stateRare: 'Normal',
+    });
   };
 
   render() {
@@ -126,6 +135,8 @@ class App extends React.Component {
           cardTrunfo={ stateTrunfo }
           cardImage={ stateImage }
         />
+        <div id="card-box">
+        </div>
       </div>
     );
   }
