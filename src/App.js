@@ -16,6 +16,15 @@ class App extends React.Component {
       stateTrunfo: '',
       stateClass: 'Iniciador',
       stateImage: '',
+      hasTrunfo: false,
+      newName: '',
+      newDesc: '',
+      newImage: '',
+      newAttr1: '',
+      newAttr2: '',
+      newAttr3: '',
+      newClass: '',
+      newRare: ''
     };
   }
 
@@ -47,8 +56,16 @@ class App extends React.Component {
 
   saveChanges = (origin) => {
     origin.preventDefault();
+    const { stateTrunfo } = this.state;
 
-    this.setState({ stateName: '',
+    if (stateTrunfo) {
+      this.setState({
+        hasTrunfo: true,
+      });
+    }
+
+    this.setState({
+      stateName: '',
       stateDesc: '',
       stateImage: '',
       stateAttr1: '0',
@@ -61,7 +78,7 @@ class App extends React.Component {
   render() {
     const { stateName, stateDesc, stateAttr1,
       stateAttr2, stateAttr3, stateTrunfo, stateRare,
-      stateClass, stateImage } = this.state;
+      stateClass, stateImage, hasTrunfo } = this.state;
 
     let button = true;
     const greaterThan = 90;
@@ -96,6 +113,7 @@ class App extends React.Component {
           cardRare={ stateRare }
           cardTrunfo={ stateTrunfo }
           cardImage={ stateImage }
+          hasTrunfo={ hasTrunfo }
         />
         <Card
           cardName={ stateName }

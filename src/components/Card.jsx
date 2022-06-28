@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 class Card extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1,
-      cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo, cardClass } = this.props;
+      cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo,
+      cardClass } = this.props;
 
     return (
       <div id="agent">
