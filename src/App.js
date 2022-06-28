@@ -9,9 +9,9 @@ class App extends React.Component {
     this.state = {
       stateName: '',
       stateDesc: '',
-      stateAttr1: '1',
-      stateAttr2: '1',
-      stateAttr3: '1',
+      stateAttr1: '0',
+      stateAttr2: '0',
+      stateAttr3: '0',
       stateRare: 'Normal',
       stateTrunfo: '',
       stateClass: 'Iniciador',
@@ -45,6 +45,19 @@ class App extends React.Component {
     }
   }
 
+  saveChanges = (origin) => {
+    origin.preventDefault();
+
+    this.setState({ stateName: '',
+      stateDesc: '',
+      stateImage: '',
+      stateAttr1: '0',
+      stateAttr2: '0',
+      stateAttr3: '0',
+      stateClass: 'Iniciador',
+      stateRare: 'Normal' });
+  };
+
   render() {
     const { stateName, stateDesc, stateAttr1,
       stateAttr2, stateAttr3, stateTrunfo, stateRare,
@@ -67,14 +80,22 @@ class App extends React.Component {
       button = false;
     }
 
-    console.log(stateSum);
-
     return (
       <div>
         <h1>Valorant Trunfo</h1>
         <Form
           onInputChange={ this.changeState }
           isSaveButtonDisabled={ button }
+          onSaveButtonClick={ this.saveChanges }
+          cardName={ stateName }
+          cardDescription={ stateDesc }
+          cardClass={ stateClass }
+          cardAttr1={ stateAttr1 }
+          cardAttr2={ stateAttr2 }
+          cardAttr3={ stateAttr3 }
+          cardRare={ stateRare }
+          cardTrunfo={ stateTrunfo }
+          cardImage={ stateImage }
         />
         <Card
           cardName={ stateName }
