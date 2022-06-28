@@ -9,11 +9,13 @@ class App extends React.Component {
     this.state = {
       stateName: '',
       stateDesc: '',
-      stateAttr1: '',
-      stateAttr2: '',
-      stateAttr3: '',
-      stateRare: '',
+      stateAttr1: '1',
+      stateAttr2: '1',
+      stateAttr3: '1',
+      stateRare: 'Normal',
       stateTrunfo: '',
+      stateClass: 'Iniciador',
+      stateImage: '',
     };
   }
 
@@ -35,27 +37,55 @@ class App extends React.Component {
       break;
     case 'newAgentSuper': this.setState({ stateTrunfo: target.checked });
       break;
+    case 'newAgentClass': this.setState({ stateClass: target.value });
+      break;
+    case 'newAgentPicture': this.setState({ stateImage: target.value });
+      break;
     default: console.log('Error');
     }
   }
 
   render() {
     const { stateName, stateDesc, stateAttr1,
-      stateAttr2, stateAttr3, stateTrunfo, stateRare } = this.state;
+      stateAttr2, stateAttr3, stateTrunfo, stateRare,
+      stateClass, stateImage } = this.state;
+
+    let button = true;
+    const greaterThan = 90;
+    const minorThan = 0;
+    const stateSum = parseInt(stateAttr1, 10)
+    + parseInt(stateAttr2, 10) + parseInt(stateAttr3, 10);
+    const stateMax = 210;
+
+    if (stateName === '' || stateImage === '' || stateDesc === ''
+    || stateAttr1 > greaterThan || stateAttr1 < minorThan
+    || stateAttr2 > greaterThan || stateAttr2 < minorThan
+    || stateAttr3 > greaterThan || stateAttr3 < minorThan
+    || stateSum > stateMax) {
+      button = true;
+    } else {
+      button = false;
+    }
+
+    console.log(stateSum);
+
     return (
       <div>
         <h1>Valorant Trunfo</h1>
         <Form
           onInputChange={ this.changeState }
+          isSaveButtonDisabled={ button }
         />
         <Card
           cardName={ stateName }
           cardDescription={ stateDesc }
+          cardClass={ stateClass }
           cardAttr1={ stateAttr1 }
           cardAttr2={ stateAttr2 }
           cardAttr3={ stateAttr3 }
           cardRare={ stateRare }
           cardTrunfo={ stateTrunfo }
+          cardImage={ stateImage }
         />
       </div>
     );

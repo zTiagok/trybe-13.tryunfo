@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class Card extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1,
-      cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo } = this.props;
+      cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo, cardClass } = this.props;
 
     return (
       <div id="agent">
@@ -19,6 +19,9 @@ class Card extends React.Component {
         />
         <p data-testid="description-card" id="agent-description">
           {`Descrição: ${cardDescription}`}
+        </p>
+        <p id="agent-class">
+          {`Classe: ${cardClass}`}
         </p>
         <p data-testid="attr1-card" id="agent-attr1">
           {`Velocidade: ${cardAttr1}`}
@@ -47,6 +50,7 @@ Card.propTypes = {
   cardAttr3: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
+  cardClass: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
 };
 

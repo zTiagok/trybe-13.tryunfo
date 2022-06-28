@@ -5,7 +5,7 @@ class Form extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo, isSaveButtonDisabled, onInputChange,
-      onSaveButtonClick } = this.props;
+      onSaveButtonClick, cardClass } = this.props;
 
     return (
       <>
@@ -20,6 +20,7 @@ class Form extends React.Component {
               name="newAgentName"
               id="newAgentName"
               data-testid="name-input"
+              placeholder="Omen"
               required
             />
           </label>
@@ -34,25 +35,28 @@ class Form extends React.Component {
               name="newAgentDesc"
               id="newAgentDesc"
               data-testid="description-input"
+              placeholder="Agente com habilidades das sombras."
               required
             />
           </label>
           <br />
           {/* CLASSE-------------------------------------------------------------------------------- */}
-          {/* <label htmlFor="newAgentClass">
+          <label htmlFor="newAgentClass">
             {'Classe: '}
             <select
+              value={ cardClass }
+              onChange={ onInputChange }
               name="newAgentClass"
               id="newAgentClass"
               required
             >
-              <option value="iniciador">Iniciador</option>
-              <option value="sentinela">Sentinela</option>
-              <option value="duelista">Duelista</option>
-              <option value="controlador">Controlador</option>
+              <option value="Iniciador">Iniciador</option>
+              <option value="Sentinela">Sentinela</option>
+              <option value="Duelista">Duelista</option>
+              <option value="Controlador">Controlador</option>
             </select>
           </label>
-          <br /> */}
+          <br />
           {/* VELOCIDADE---------------------------------------------------------------------------- */}
           <label htmlFor="newAgentAttr1">
             {'Velocidade: '}
@@ -65,6 +69,7 @@ class Form extends React.Component {
               data-testid="attr1-input"
               min="1"
               max="10"
+              placeholder="1"
               required
             />
           </label>
@@ -81,6 +86,7 @@ class Form extends React.Component {
               data-testid="attr2-input"
               min="1"
               max="10"
+              placeholder="1"
               required
             />
           </label>
@@ -97,6 +103,7 @@ class Form extends React.Component {
               data-testid="attr3-input"
               min="1"
               max="10"
+              placeholder="1"
               required
             />
           </label>
@@ -111,6 +118,7 @@ class Form extends React.Component {
               name="newAgentPicture"
               id="newAgentPicture"
               data-testid="image-input"
+              placeholder="https://image.com/image"
               required
             />
           </label>
@@ -170,6 +178,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
+  cardClass: PropTypes.string.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
