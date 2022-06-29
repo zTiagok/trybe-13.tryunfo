@@ -46,15 +46,107 @@ body {
 
 #card-form {
   background-color: rgb(10, 16, 24);
-  height: 400px;
+  height: fit-content;
   display: flex;
   justify-content: space-around;
   padding-top: 50px;
+  padding-bottom: 20px;
   border-bottom: 5px solid rgb(216, 40, 84);
 }
 
+#newAgentForm {
+  background-color: rgb(17, 26, 37);;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 20px;
+  text-align:right;
+}
+
+#newAgentName {
+  width: 200px;
+  height: 25px;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+#newAgentDesc {
+  width: 200px;
+  height: 75px;
+  border-radius: 5px;
+  margin: 3px
+}
+
+#newAgentClass {
+  width: 204px;
+  height: 25px;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+#newAgentAttr1 {
+  width: 40px;
+  height: 23px;
+  border-radius: 5px;
+  margin-right: 163px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#newAgentAttr2 {
+  width: 40px;
+  height: 23px;
+  border-radius: 5px;
+  margin-right: 163px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#newAgentAttr3 {
+  width: 40px;
+  height: 23px;
+  border-radius: 5px;
+  margin-right: 163px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#newAgentPicture {
+  width: 200px;
+  height: 25px;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+#newAgentRarity {
+  width: 80px;
+  height: 23px;
+  border-radius: 5px;
+  margin-right: 127px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#supertrunfo {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#newAgentSuper {
+  width: 100%;
+  height: 23px;
+  border-radius: 5px;
+  margin-right: 127px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  accent-color: rgb(216, 40, 84);
+}
+
 #card-form button {
-  width: 100px;
-  height: 50px;
+  font-family: lemonMilk;
+  font-weight: 800;
+  width: 100%;
+  height: 40px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 

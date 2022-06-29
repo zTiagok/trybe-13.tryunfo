@@ -9,7 +9,7 @@ class Form extends React.Component {
 
     const superTrunfo = (
       <label htmlFor="newAgentSuper">
-        {'Super Trunfo: '}
+        <p id="supertrunfo">Super Trunfo</p>
         <input
           checked={ cardTrunfo }
           onChange={ onInputChange }
