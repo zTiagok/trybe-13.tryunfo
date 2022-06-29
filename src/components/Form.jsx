@@ -41,13 +41,14 @@ class Form extends React.Component {
           <br />
           {/* DESC-------------------------------------------------------------------------------- */}
           <label htmlFor="newAgentDesc">
-            {'Descrição: '}
-            <input
+            <p id="newAgentDescText">Descrição:</p>
+            <textarea
               value={ cardDescription }
               onChange={ onInputChange }
               type="textarea"
               name="newAgentDesc"
               id="newAgentDesc"
+              rows="10"
               data-testid="description-input"
               placeholder="Agente com habilidades das sombras."
               required
@@ -156,7 +157,7 @@ class Form extends React.Component {
           <br />
           {/* SUPERTRUNFO--------------------------------------------------------------------------- */}
           {hasTrunfo
-            ? <p>Você já tem um Super Trunfo em seu baralho</p>
+            ? <p id="hasTrunfo">Você já tem um Super Trunfo em seu baralho</p>
             : superTrunfo}
         </form>
 

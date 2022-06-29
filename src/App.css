@@ -11,7 +11,6 @@
 * {
   margin: 0px;
   border: 0px;
-  color:white;
 }
 
 body {
@@ -20,8 +19,9 @@ body {
   background-image: url(./img/valorantbg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: fixed;
+  background-attachment: fixed;
   background-color: rgb(16, 24, 34);
+  color:white;
 }
 
 #title {
@@ -69,11 +69,19 @@ body {
   margin: 3px;
 }
 
+#newAgentDescText{
+  display: inline-block;
+  position: relative;
+  top: -140px;
+  left: -5px;
+}
+
 #newAgentDesc {
   width: 200px;
-  height: 75px;
   border-radius: 5px;
-  margin: 3px
+  margin-right:3px;
+  margin-top: 3px;
+  margin-bottom: -2px;
 }
 
 #newAgentClass {
@@ -118,10 +126,10 @@ body {
 }
 
 #newAgentRarity {
-  width: 80px;
+  width: 90px;
   height: 23px;
   border-radius: 5px;
-  margin-right: 127px;
+  margin-right: 117px;
   margin-top: 3px;
   margin-bottom: 3px;
 }
@@ -150,3 +158,8 @@ body {
   border-bottom-right-radius: 5px;
 }
 
+#hasTrunfo {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+}
