@@ -132,8 +132,9 @@ class App extends React.Component {
 
     return (
       <div>
-        <header id="header">
-          <h1 id="title">Valorant Trunfo</h1>
+        <h1 id="title">Valorant Trunfo</h1>
+        <h3 id="subtitle">Crie seu agente</h3>
+        <div id="card-form">
           <Form
             onInputChange={ this.changeState }
             isSaveButtonDisabled={ button }
@@ -149,19 +150,19 @@ class App extends React.Component {
             cardImage={ stateImage }
             hasTrunfo={ hasTrunfo }
           />
-        </header>
-        <div id="card-creator">
-          <Card
-            cardName={ stateName }
-            cardDescription={ stateDesc }
-            cardClass={ stateClass }
-            cardAttr1={ stateAttr1 }
-            cardAttr2={ stateAttr2 }
-            cardAttr3={ stateAttr3 }
-            cardRare={ stateRare }
-            cardTrunfo={ stateTrunfo }
-            cardImage={ stateImage }
-          />
+          <div id="card-creator">
+            <Card
+              cardName={ stateName }
+              cardDescription={ stateDesc }
+              cardClass={ stateClass }
+              cardAttr1={ stateAttr1 }
+              cardAttr2={ stateAttr2 }
+              cardAttr3={ stateAttr3 }
+              cardRare={ stateRare }
+              cardTrunfo={ stateTrunfo }
+              cardImage={ stateImage }
+            />
+          </div>
         </div>
         <div id="card-box">
           { cardArray }

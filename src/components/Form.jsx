@@ -22,7 +22,7 @@ class Form extends React.Component {
     );
 
     return (
-      <>
+      <div id="form">
         <form id="newAgentForm">
           {/* NOME-------------------------------------------------------------------------------- */}
           <label htmlFor="newAgentName">
@@ -169,7 +169,7 @@ class Form extends React.Component {
         >
           Salvar
         </button>
-      </>
+      </div>
     );
   }
 }

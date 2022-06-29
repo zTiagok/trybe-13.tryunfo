@@ -14,21 +14,47 @@
   color:white;
 }
 
-#title {
-  font-family: valorant, sans-serif;
-  font-size: 80px;
-  width: 800px;
-  color: rgb(255, 14, 94);
-}
-
-#header {
-  background-color: black;
-}
-
 body {
   font-family: lemonMilk;
   font-size: 18px;
   background-image: url(./img/valorantbg.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: fixed;
+  background-color: rgb(16, 24, 34);
 }
+
+#title {
+  font-family: valorant, sans-serif;
+  font-size: 80px;
+  width: 100%;
+  color: rgb(216, 40, 84);
+  background-color: rgb(10, 16, 24);
+  text-align: center;
+  padding-top: 10px;
+}
+
+#subtitle {
+  font-family: valorant, sans-serif;
+  font-size: 30px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  background-color: rgb(10, 16, 24);
+  text-align: center;
+  margin-top: -15px;
+}
+
+#card-form {
+  background-color: rgb(10, 16, 24);
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+  border-bottom: 5px solid rgb(216, 40, 84);
+}
+
+#card-form button {
+  width: 100px;
+  height: 50px;
+}
+
