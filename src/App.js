@@ -18,6 +18,7 @@ class App extends React.Component {
       stateImage: '',
       hasTrunfo: false,
       cardArray: [],
+      deleteCard: '',
     };
   }
 
@@ -46,6 +47,10 @@ class App extends React.Component {
     default: console.log('Error');
     }
   }
+
+  deleteHandler = (origin) => {
+    this.setState({ deleteCard: origin });
+  };
 
   saveChanges = (origin) => {
     origin.preventDefault();
@@ -81,6 +86,8 @@ class App extends React.Component {
       cardRare={ cardInfo.stateRare }
       cardTrunfo={ cardInfo.stateTrunfo }
       cardImage={ cardInfo.stateImage }
+      deleteButton
+      deleteEvent={ this.deleteHandler }
     />);
 
     this.setState({
@@ -99,7 +106,7 @@ class App extends React.Component {
   render() {
     const { stateName, stateDesc, stateAttr1,
       stateAttr2, stateAttr3, stateTrunfo, stateRare,
-      stateClass, stateImage, hasTrunfo, cardArray } = this.state;
+      stateClass, stateImage, hasTrunfo, cardArray, deleteCard } = this.state;
 
     let button = true;
     const greaterThan = 90;
@@ -116,6 +123,10 @@ class App extends React.Component {
       button = true;
     } else {
       button = false;
+    }
+
+    if (deleteCard !== '') {
+      deleteCard.target.parentElement.remove();
     }
 
     return (
@@ -136,17 +147,19 @@ class App extends React.Component {
           cardImage={ stateImage }
           hasTrunfo={ hasTrunfo }
         />
-        <Card
-          cardName={ stateName }
-          cardDescription={ stateDesc }
-          cardClass={ stateClass }
-          cardAttr1={ stateAttr1 }
-          cardAttr2={ stateAttr2 }
-          cardAttr3={ stateAttr3 }
-          cardRare={ stateRare }
-          cardTrunfo={ stateTrunfo }
-          cardImage={ stateImage }
-        />
+        <div id="card-creator">
+          <Card
+            cardName={ stateName }
+            cardDescription={ stateDesc }
+            cardClass={ stateClass }
+            cardAttr1={ stateAttr1 }
+            cardAttr2={ stateAttr2 }
+            cardAttr3={ stateAttr3 }
+            cardRare={ stateRare }
+            cardTrunfo={ stateTrunfo }
+            cardImage={ stateImage }
+          />
+        </div>
         <div id="card-box">
           { cardArray }
         </div>

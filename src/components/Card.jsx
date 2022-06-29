@@ -5,10 +5,12 @@ class Card extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1,
       cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo,
-      cardClass } = this.props;
+      cardClass, deleteButton, deleteEvent } = this.props;
+
+    const a = { d: 'delete-button', c: deleteEvent, h: 'Excluir' };
 
     return (
-      <div id="agent">
+      <div className="agent">
         <p data-testid="name-card" id="agent-name">
           {`Agente: ${cardName}`}
         </p>
@@ -37,7 +39,9 @@ class Card extends React.Component {
           {`Raridade: ${cardRare}`}
         </p>
         {cardTrunfo ? <p data-testid="trunfo-card"> Super Trunfo </p> : undefined}
-
+        {deleteButton
+          ? <button type="button" data-testid={ a.d } onClick={ a.c }> Excluir </button>
+          : undefined}
       </div>
     );
   }
@@ -52,6 +56,8 @@ Card.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardClass: PropTypes.string.isRequired,
+  deleteButton: PropTypes.bool.isRequired,
+  deleteEvent: PropTypes.func.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
 };
 
