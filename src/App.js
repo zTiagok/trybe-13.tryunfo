@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import './App.css';
 
 class App extends React.Component {
   constructor() {
@@ -131,22 +132,24 @@ class App extends React.Component {
 
     return (
       <div>
-        <h1>Valorant Trunfo</h1>
-        <Form
-          onInputChange={ this.changeState }
-          isSaveButtonDisabled={ button }
-          onSaveButtonClick={ this.saveChanges }
-          cardName={ stateName }
-          cardDescription={ stateDesc }
-          cardClass={ stateClass }
-          cardAttr1={ stateAttr1 }
-          cardAttr2={ stateAttr2 }
-          cardAttr3={ stateAttr3 }
-          cardRare={ stateRare }
-          cardTrunfo={ stateTrunfo }
-          cardImage={ stateImage }
-          hasTrunfo={ hasTrunfo }
-        />
+        <header id="header">
+          <h1 id="title">Valorant Trunfo</h1>
+          <Form
+            onInputChange={ this.changeState }
+            isSaveButtonDisabled={ button }
+            onSaveButtonClick={ this.saveChanges }
+            cardName={ stateName }
+            cardDescription={ stateDesc }
+            cardClass={ stateClass }
+            cardAttr1={ stateAttr1 }
+            cardAttr2={ stateAttr2 }
+            cardAttr3={ stateAttr3 }
+            cardRare={ stateRare }
+            cardTrunfo={ stateTrunfo }
+            cardImage={ stateImage }
+            hasTrunfo={ hasTrunfo }
+          />
+        </header>
         <div id="card-creator">
           <Card
             cardName={ stateName }
