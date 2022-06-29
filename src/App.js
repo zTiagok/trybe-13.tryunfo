@@ -56,6 +56,10 @@ class App extends React.Component {
 
   deleteHandler = (origin) => {
     this.setState({ deleteCard: origin });
+
+    if (origin.target.parentElement.innerHTML.includes('Super Trunfo')) {
+      this.setState({ hasTrunfo: false });
+    }
   };
 
   saveChanges = (origin) => {
