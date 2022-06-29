@@ -6,6 +6,7 @@ import './App.css';
 // TO DO LIST
 // FAZER UM SLIDER NOS ATRIBUTOS DO AGENTE
 // LIMITAR NO <FORM> A QUANTIDADE DE CARACTERES PARA O NOME
+// TIRAR CORES TRANSPARENTES NO CSS DO <CARD>
 
 class App extends React.Component {
   constructor() {

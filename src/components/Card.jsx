@@ -7,7 +7,16 @@ class Card extends React.Component {
       cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo,
       cardClass, deleteButton, deleteEvent } = this.props;
 
-    const a = { d: 'delete-button', c: deleteEvent, h: 'Excluir' };
+    const btn = (
+      <button
+        type="button"
+        name={ cardName }
+        onClick={ deleteEvent }
+        data-testid="delete-button"
+      >
+        Excluir
+      </button>
+    );
 
     return (
       <div className="agent">
@@ -38,7 +47,7 @@ class Card extends React.Component {
         </p>
         {cardTrunfo ? <p data-testid="trunfo-card"> Super Trunfo </p> : undefined}
         {deleteButton
-          ? <button type="button" data-testid={ a.d } onClick={ a.c }> Excluir </button>
+          ? btn
           : undefined}
         <div id="background-style" />
         <img
