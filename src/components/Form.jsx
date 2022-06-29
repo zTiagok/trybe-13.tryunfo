@@ -35,6 +35,7 @@ class Form extends React.Component {
               id="newAgentName"
               data-testid="name-input"
               placeholder="Omen"
+              maxLength="10"
               required
             />
           </label>

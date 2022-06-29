@@ -12,7 +12,7 @@ class Card extends React.Component {
     return (
       <div className="agent">
         <p data-testid="name-card" id="agent-name">
-          {`Agente: ${cardName}`}
+          {`${cardName}`}
         </p>
         <img
           src={ cardImage }
@@ -20,9 +20,6 @@ class Card extends React.Component {
           data-testid="image-card"
           id="agent-image"
         />
-        <p data-testid="description-card" id="agent-description">
-          {`Descrição: ${cardDescription}`}
-        </p>
         <p id="agent-class">
           {`Classe: ${cardClass}`}
         </p>
@@ -38,10 +35,14 @@ class Card extends React.Component {
         <p data-testid="rare-card" id="agent-rarity">
           {`Raridade: ${cardRare}`}
         </p>
+        <p data-testid="description-card" id="agent-description">
+          {`Descrição: ${cardDescription}`}
+        </p>
         {cardTrunfo ? <p data-testid="trunfo-card"> Super Trunfo </p> : undefined}
         {deleteButton
           ? <button type="button" data-testid={ a.d } onClick={ a.c }> Excluir </button>
           : undefined}
+        <div id="background-style" />
       </div>
     );
   }

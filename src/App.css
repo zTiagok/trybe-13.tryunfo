@@ -178,3 +178,34 @@ select {
   font-size: 12px;
   padding: 18px;
 }
+
+#card-form .agent {
+  background-color: rgb(211, 15, 64);
+  width: 350px;
+  height: 500px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  margin-top: 15px;
+}
+
+#card-form #agent-name {
+  color: black;
+  font-family: valorant,sans-serif;
+  transform: rotate(-90deg);
+  position: relative;
+  font-size: 50px;
+  left: -115px;
+  top: 200px;
+  width: 290px;
+  height: 50px;
+  word-wrap:normal;
+}
+
+#card-box .agent {
+  background-color: rgb(211, 15, 64);
+  width: 350px;
+  height: 500px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  margin-top: 15px;
+}
