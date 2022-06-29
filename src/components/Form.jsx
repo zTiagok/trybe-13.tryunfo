@@ -133,7 +133,7 @@ class Form extends React.Component {
               name="newAgentPicture"
               id="newAgentPicture"
               data-testid="image-input"
-              placeholder="https://image.com/image"
+              placeholder="https://valorant.com/omen"
               required
             />
           </label>
