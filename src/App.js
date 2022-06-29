@@ -1,5 +1,4 @@
 import React from 'react';
-import { array } from 'prop-types';
 import Form from './components/Form';
 import Card from './components/Card';
 
@@ -18,7 +17,7 @@ class App extends React.Component {
       stateClass: 'Iniciador',
       stateImage: '',
       hasTrunfo: false,
-      newCard: '',
+      cardArray: [],
     };
   }
 
@@ -51,7 +50,7 @@ class App extends React.Component {
   saveChanges = (origin) => {
     origin.preventDefault();
     const { stateTrunfo, stateName, stateDesc, stateImage, stateAttr1,
-      stateAttr2, stateAttr3, stateClass, stateRare } = this.state;
+      stateAttr2, stateAttr3, stateClass, stateRare, cardArray } = this.state;
 
     if (stateTrunfo) {
       this.setState({
@@ -71,8 +70,20 @@ class App extends React.Component {
       stateTrunfo,
     };
 
+    const newArray = cardArray;
+    newArray.push(<Card
+      cardName={ cardInfo.stateName }
+      cardDescription={ cardInfo.stateDesc }
+      cardClass={ cardInfo.stateClass }
+      cardAttr1={ cardInfo.stateAttr1 }
+      cardAttr2={ cardInfo.stateAttr2 }
+      cardAttr3={ cardInfo.stateAttr3 }
+      cardRare={ cardInfo.stateRare }
+      cardTrunfo={ cardInfo.stateTrunfo }
+      cardImage={ cardInfo.stateImage }
+    />);
+
     this.setState({
-      newCard: cardInfo,
       stateName: '',
       stateDesc: '',
       stateImage: '',
@@ -81,13 +92,14 @@ class App extends React.Component {
       stateAttr3: '0',
       stateClass: 'Iniciador',
       stateRare: 'Normal',
+      cardArray: newArray,
     });
   };
 
   render() {
     const { stateName, stateDesc, stateAttr1,
       stateAttr2, stateAttr3, stateTrunfo, stateRare,
-      stateClass, stateImage, hasTrunfo } = this.state;
+      stateClass, stateImage, hasTrunfo, cardArray } = this.state;
 
     let button = true;
     const greaterThan = 90;
@@ -136,6 +148,7 @@ class App extends React.Component {
           cardImage={ stateImage }
         />
         <div id="card-box">
+          { cardArray }
         </div>
       </div>
     );
