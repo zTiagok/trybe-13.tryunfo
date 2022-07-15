@@ -58,7 +58,7 @@ select {
 
 #card-form {
   background-color: rgb(10, 16, 24);
-  height: fit-content;
+  height: 800px;
   display: flex;
   justify-content: space-around;
   padding-top: 50px;
@@ -67,7 +67,7 @@ select {
 }
 
 #newAgentForm {
-  background-color: rgb(17, 26, 37);;
+  background-color: rgb(17, 26, 37);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: 20px;
@@ -301,12 +301,25 @@ select {
 
 /* CARDBOX ______________________________________________________________________________________________________________________________ */
 
+#card-box-title {
+  height: 200px;
+  font-size: 60px;
+  text-align: center;
+  line-height: 300%;
+  position: relative;
+  margin: 50px 0px;
+  background-color: rgb(10, 16, 24);
+  border-top: 5px solid rgb(216, 40, 84);
+  border-bottom: 5px solid rgb(216, 40, 84);
+}
+
 #card-box {
   display: flex;
   justify-content: space-around;
-  width: 95%;
+  width: 81%;
   margin: auto;
   flex-wrap:wrap;
+  padding-bottom: 100px;
 }
 
 #card-box .agent {
@@ -320,7 +333,7 @@ select {
 }
 
 #card-box .agent-name {
-  color: black;
+  color: white;
   font-family: valorant,sans-serif;
   transform: rotate(-90deg);
   position: relative;
@@ -340,7 +353,7 @@ select {
   text-align: center;
   font-size: 12px;
   z-index: 3;
-  top: -390px;
+  top: -345px;
   word-wrap: break-word;
 }
 
@@ -355,7 +368,7 @@ select {
   color: transparent;
   width: 290px;
   height: fit-content;
-  top: -290px;
+  top: -280px;
   left: 55px;
   position:relative;
   display: grid;
@@ -406,20 +419,121 @@ select {
   z-index: 1;
 }
 
+#card-box .agent-attr {
+  width: 180px;
+  height: 50px;
+  border-top-left-radius: 10px;
+  background-color: rgba(17, 1, 5, 0.918);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  position: relative;
+  top: 233px;
+  left: 150px;
+  padding-left: 20px;
+}
+
 #card-box .agent-attr1 {
-  color:transparent
+  background-image: url(./Stats/Vel.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 3px;
+  z-index: 1;
+  background-position: 0px;
+}
+
+#card-box .agent-attr1-value {
+  background-color: rgb(211, 15, 64);
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  left: -10px;
 }
 
 #card-box .agent-attr2 {
-  color:transparent
+  background-image: url(./Stats/Int.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 3px;
+  z-index: 1;
+  background-position: 0px;
+}
+
+#card-box .agent-attr2-value {
+  background-color: rgb(211, 15, 64);
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  left: -10px;
 }
 
 #card-box .agent-attr3 {
-  color:transparent
+  background-image: url(./Stats/Tec.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 3px;
+  z-index: 1;
+  background-position: 0px;
+}
+
+#card-box .agent-attr3-value {
+  background-color: rgb(211, 15, 64);
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  left: -10px;
 }
 
 #card-box .agent-rarity {
-  color:transparent
+  color:white;
+  position: relative;
+  left: 120px;
+  top: 345px;
+  width: 120px;
+  text-align: center;
+  z-index: 2;
+  font-size: 10px;
+}
+
+#card-box .normal-rarity {
+  text-shadow: 0px 0px 10px white, 0px 0px 10px white, 0px 0px 10px white;
+}
+
+#card-box .rare-rarity {
+  text-shadow: 0px 0px 10px rgb(255, 145, 0), 0px 0px 10px rgb(255, 145, 0), 0px 0px 10px rgb(255, 145, 0);
+}
+
+#card-box .rarer-rarity {
+  text-shadow: 0px 0px 10px rgb(255, 0, 0), 0px 0px 10px rgb(255, 0, 0), 0px 0px 10px rgb(255, 0, 0);
 }
 
 #card-box .background-style {
@@ -429,6 +543,67 @@ select {
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
   position: relative;
-  top: 190px;
+  top: 220px;
   z-index: 1;
+}
+
+#footer {
+  position: fixed;
+  background-color: rgb(10, 16, 24);
+  border-top: 5px solid rgb(216, 40, 84);
+  width: 100%;
+  height: 70px;
+  top: 93%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+#footer-legend {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#footer-attr1-symbol {
+  background-image: url(./Stats/Vel.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+
+#footer-attr1-text {
+  margin-left: 5px;
+}
+
+#footer-attr2-symbol {
+  background-image: url(./Stats/Int.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0px;
+  width: 40px;
+  height: 40px;
+  margin-left: 40px
+}
+
+#footer-attr2-text {
+  margin-left: 5px;
+}
+
+#footer-attr3-symbol {
+  background-image: url(./Stats/Tec.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0px;
+  width: 30px;
+  height: 40px;
+  margin-left: 40px
+}
+
+#footer-attr3-text {
+  margin-left: 5px;
 }

@@ -2,6 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Card extends React.Component {
+  rarityChecker = (origin) => {
+    if (origin === 'Raro') {
+      return (
+        <p className="rare-rarity">
+          {origin}
+        </p>
+      );
+    } if (origin === 'Normal') {
+      return (
+        <p className="normal-rarity">
+          {origin}
+        </p>
+      );
+    } if (origin === 'Muito Raro') {
+      return (
+        <p className="rarer-rarity">
+          {origin}
+        </p>
+      );
+    }
+  }
+
   render() {
     const { cardName, cardDescription, cardAttr1,
       cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo,
@@ -33,17 +55,27 @@ class Card extends React.Component {
           { cardClass === 'Controlador'
             ? <div className="controlador" /> : undefined}
         </p>
-        <p data-testid="attr1-card" className="agent-attr1">
-          {`Velocidade: ${cardAttr1}`}
-        </p>
-        <p data-testid="attr2-card" className="agent-attr2">
-          {`Inteligência: ${cardAttr2}`}
-        </p>
-        <p data-testid="attr3-card" className="agent-attr3">
-          {`Técnica: ${cardAttr3}`}
-        </p>
+
+        <div className="agent-attr">
+          <div data-testid="attr1-card" className="agent-attr1">
+            <p className="agent-attr1-value">
+              {cardAttr1}
+            </p>
+          </div>
+          <div data-testid="attr2-card" className="agent-attr2">
+            <p className="agent-attr2-value">
+              {cardAttr2}
+            </p>
+          </div>
+          <div data-testid="attr3-card" className="agent-attr3">
+            <p className="agent-attr3-value">
+              {cardAttr3}
+            </p>
+          </div>
+        </div>
+
         <p data-testid="rare-card" className="agent-rarity">
-          {`Raridade: ${cardRare}`}
+          {this.rarityChecker(cardRare)}
         </p>
         {cardTrunfo ? <p data-testid="trunfo-card"> Super Trunfo </p> : undefined}
         {deleteButton

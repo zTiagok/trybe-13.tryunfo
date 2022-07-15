@@ -185,9 +185,20 @@ class App extends React.Component {
             />
           </div>
         </div>
+        <h1 id="card-box-title">Agentes</h1>
         <div id="card-box">
           {cardArray}
           {agentsCards}
+        </div>
+        <div id="footer">
+          <div id="footer-legend">
+            <div id="footer-attr1-symbol" />
+            <p id="footer-attr1-text"> Velocidade </p>
+            <div id="footer-attr2-symbol" />
+            <p id="footer-attr2-text"> Inteligência </p>
+            <div id="footer-attr3-symbol" />
+            <p id="footer-attr3-text"> Técnica </p>
+          </div>
         </div>
       </div>
     );
