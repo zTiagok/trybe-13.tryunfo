@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import agents from './components/Agents';
 import './App.css';
 
 // TO DO LIST
@@ -27,6 +28,14 @@ class App extends React.Component {
       deleteCard: '',
     };
   }
+
+  componentDidMount() {
+    // this.createAgents();
+  }
+
+  createAgents = () => {
+    this.setState({ cardArray: agentsCards });
+  };
 
   changeState = (origin) => {
     const { target } = origin;
@@ -65,7 +74,7 @@ class App extends React.Component {
   saveChanges = (origin) => {
     origin.preventDefault();
     const { stateTrunfo, stateName, stateDesc, stateImage, stateAttr1,
-      stateAttr2, stateAttr3, stateClass, stateRare, cardArray } = this.state;
+      stateAttr2, stateAttr3, stateClass, stateRare } = this.state;
 
     if (stateTrunfo) {
       this.setState({
@@ -85,7 +94,8 @@ class App extends React.Component {
       stateTrunfo,
     };
 
-    const newArray = cardArray;
+    const newArray = [];
+
     newArray.push(<Card
       cardName={ cardInfo.stateName }
       cardDescription={ cardInfo.stateDesc }
@@ -100,7 +110,7 @@ class App extends React.Component {
       deleteEvent={ this.deleteHandler }
     />);
 
-    this.setState({
+    this.setState((prevState) => ({
       stateName: '',
       stateDesc: '',
       stateImage: '',
@@ -109,8 +119,8 @@ class App extends React.Component {
       stateAttr3: '0',
       stateClass: 'Iniciador',
       stateRare: 'Normal',
-      cardArray: newArray,
-    });
+      cardArray: [...prevState.cardArray, newArray],
+    }));
   };
 
   render() {
@@ -118,18 +128,20 @@ class App extends React.Component {
       stateAttr2, stateAttr3, stateTrunfo, stateRare,
       stateClass, stateImage, hasTrunfo, cardArray, deleteCard } = this.state;
 
+    const agentsCards = agents;
+
     let button = true;
     const greaterThan = 90;
     const minorThan = 0;
     const stateSum = parseInt(stateAttr1, 10)
-    + parseInt(stateAttr2, 10) + parseInt(stateAttr3, 10);
+      + parseInt(stateAttr2, 10) + parseInt(stateAttr3, 10);
     const stateMax = 210;
 
     if (stateName === '' || stateImage === '' || stateDesc === ''
-    || stateAttr1 > greaterThan || stateAttr1 < minorThan
-    || stateAttr2 > greaterThan || stateAttr2 < minorThan
-    || stateAttr3 > greaterThan || stateAttr3 < minorThan
-    || stateSum > stateMax) {
+      || stateAttr1 > greaterThan || stateAttr1 < minorThan
+      || stateAttr2 > greaterThan || stateAttr2 < minorThan
+      || stateAttr3 > greaterThan || stateAttr3 < minorThan
+      || stateSum > stateMax) {
       button = true;
     } else {
       button = false;
@@ -174,7 +186,8 @@ class App extends React.Component {
           </div>
         </div>
         <div id="card-box">
-          { cardArray }
+          {cardArray}
+          {agentsCards}
         </div>
       </div>
     );

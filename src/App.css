@@ -189,7 +189,7 @@ select {
   border: 3px solid rgb(255, 213, 223);
 }
 
-#card-form #agent-name {
+#card-form .agent-name {
   color: black;
   font-family: valorant,sans-serif;
   transform: rotate(-90deg);
@@ -203,7 +203,7 @@ select {
   z-index: 2;
 }
 
-#card-form #agent-description {
+#card-form .agent-description {
   position: relative;
   width: 80%;
   margin: auto;
@@ -214,16 +214,16 @@ select {
   word-wrap: break-word;
 }
 
-#card-form #agent-description-title {
+#card-form .agent-description-title {
   margin-bottom: 10px;
   font-weight: 800;
   color: rgb(211, 15, 64);
   text-shadow: 0px 2px 5px rgb(211, 15, 64);
 }
 
-#card-form #agent-image {
+#card-form .agent-image {
   color: transparent;
-  width: 300px;
+  width: 290px;
   height: fit-content;
   top: -290px;
   left: 55px;
@@ -232,7 +232,7 @@ select {
   z-index: 0;
 }
 
-#card-form #iniciador {
+#card-form .iniciador {
   background-image: url(./img/class_iniciador.png);
   background-size: contain;
   width: 40px;
@@ -242,7 +242,7 @@ select {
   left: 300px;
 }
 
-#card-form #sentinela {
+#card-form .sentinela {
   background-image: url(./img/class_sentinela.png);
   background-size: contain;
   width: 40px;
@@ -252,7 +252,7 @@ select {
   left: 300px;
 }
 
-#card-form #duelista {
+#card-form .duelista {
   background-image: url(./img/class_duelista.png);
   background-size: contain;
   width: 40px;
@@ -262,7 +262,7 @@ select {
   left: 300px;
 }
 
-#card-form #controlador {
+#card-form .controlador {
   background-image: url(./img/class_controlador.png);
   background-size: contain;
   width: 40px;
@@ -272,23 +272,23 @@ select {
   left: 300px;
 }
 
-#card-form #agent-attr1 {
+#card-form .agent-attr1 {
   color:transparent
 }
 
-#card-form #agent-attr2 {
+#card-form .agent-attr2 {
   color:transparent
 }
 
-#card-form #agent-attr3 {
+#card-form .agent-attr3 {
   color:transparent
 }
 
-#card-form #agent-rarity {
+#card-form .agent-rarity {
   color:transparent
 }
 
-#card-form #background-style {
+#card-form .background-style {
   background-color: rgba(17, 1, 5, 0.918);
   width: 100%;
   height: 128px;
@@ -299,7 +299,15 @@ select {
   z-index: 1;
 }
 
-/* CARDBOX */
+/* CARDBOX ______________________________________________________________________________________________________________________________ */
+
+#card-box {
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+  margin: auto;
+  flex-wrap:wrap;
+}
 
 #card-box .agent {
   background-color: rgb(211, 15, 64);
@@ -308,4 +316,119 @@ select {
   border-radius: 10px;
   word-wrap: break-word;
   margin-top: 15px;
+  border: 3px solid rgb(255, 213, 223);
+}
+
+#card-box .agent-name {
+  color: black;
+  font-family: valorant,sans-serif;
+  transform: rotate(-90deg);
+  position: relative;
+  font-size: 50px;
+  left: -115px;
+  top: 200px;
+  width: 290px;
+  height: 50px;
+  word-wrap:normal;
+  z-index: 2;
+}
+
+#card-box .agent-description {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 12px;
+  z-index: 3;
+  top: -390px;
+  word-wrap: break-word;
+}
+
+#card-box .agent-description-title {
+  margin-bottom: 10px;
+  font-weight: 800;
+  color: rgb(211, 15, 64);
+  text-shadow: 0px 2px 5px rgb(211, 15, 64);
+}
+
+#card-box .agent-image {
+  color: transparent;
+  width: 290px;
+  height: fit-content;
+  top: -290px;
+  left: 55px;
+  position:relative;
+  display: grid;
+  z-index: 0;
+}
+
+#card-box .iniciador {
+  background-image: url(./img/class_iniciador.png);
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -43px;
+  left: 300px;
+  z-index: 1;
+}
+
+#card-box .sentinela {
+  background-image: url(./img/class_sentinela.png);
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -43px;
+  left: 300px;
+  z-index: 1;
+}
+
+#card-box .duelista {
+  background-image: url(./img/class_duelista.png);
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -43px;
+  left: 300px;
+  z-index: 1;
+}
+
+#card-box .controlador {
+  background-image: url(./img/class_controlador.png);
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -43px;
+  left: 300px;
+  z-index: 1;
+}
+
+#card-box .agent-attr1 {
+  color:transparent
+}
+
+#card-box .agent-attr2 {
+  color:transparent
+}
+
+#card-box .agent-attr3 {
+  color:transparent
+}
+
+#card-box .agent-rarity {
+  color:transparent
+}
+
+#card-box .background-style {
+  background-color: rgba(17, 1, 5, 0.918);
+  width: 100%;
+  height: 128px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  position: relative;
+  top: 190px;
+  z-index: 1;
 }

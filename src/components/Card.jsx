@@ -20,44 +20,44 @@ class Card extends React.Component {
 
     return (
       <div className="agent">
-        <p data-testid="name-card" id="agent-name">
+        <p data-testid="name-card" className="agent-name">
           {`${cardName}`}
         </p>
-        <p id="agent-class">
+        <p className="agent-class">
           { cardClass === 'Iniciador'
-            ? <div id="iniciador" /> : undefined}
+            ? <div className="iniciador" /> : undefined}
           { cardClass === 'Sentinela'
-            ? <div id="sentinela" /> : undefined}
+            ? <div className="sentinela" /> : undefined}
           { cardClass === 'Duelista'
-            ? <div id="duelista" /> : undefined}
+            ? <div className="duelista" /> : undefined}
           { cardClass === 'Controlador'
-            ? <div id="controlador" /> : undefined}
+            ? <div className="controlador" /> : undefined}
         </p>
-        <p data-testid="attr1-card" id="agent-attr1">
+        <p data-testid="attr1-card" className="agent-attr1">
           {`Velocidade: ${cardAttr1}`}
         </p>
-        <p data-testid="attr2-card" id="agent-attr2">
+        <p data-testid="attr2-card" className="agent-attr2">
           {`Inteligência: ${cardAttr2}`}
         </p>
-        <p data-testid="attr3-card" id="agent-attr3">
+        <p data-testid="attr3-card" className="agent-attr3">
           {`Técnica: ${cardAttr3}`}
         </p>
-        <p data-testid="rare-card" id="agent-rarity">
+        <p data-testid="rare-card" className="agent-rarity">
           {`Raridade: ${cardRare}`}
         </p>
         {cardTrunfo ? <p data-testid="trunfo-card"> Super Trunfo </p> : undefined}
         {deleteButton
           ? btn
           : undefined}
-        <div id="background-style" />
+        <div className="background-style" />
         <img
           src={ cardImage }
           alt={ cardName }
           data-testid="image-card"
-          id="agent-image"
+          className="agent-image"
         />
-        <div id="agent-description">
-          <p id="agent-description-title">Informações</p>
+        <div className="agent-description">
+          <p className="agent-description-title">Informações</p>
           <p data-testid="description-card">
             { cardDescription }
           </p>
