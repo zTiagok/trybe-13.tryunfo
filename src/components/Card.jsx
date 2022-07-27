@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Card extends React.Component {
+  componentDidMount() {
+    const form = document.querySelector('#card-form');
+    const description = form.querySelector('.agent-description-title');
+    description.classList.add('agent-description-title-noimage');
+  }
+
   rarityChecker = (origin) => {
     if (origin === 'Raro') {
       return (
@@ -24,20 +30,26 @@ class Card extends React.Component {
     }
   }
 
+  descriptionImage = () => {
+
+  }
+
   render() {
     const { cardName, cardDescription, cardAttr1,
       cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo,
-      cardClass, deleteButton, deleteEvent } = this.props;
+      cardClass } = this.props;
 
-    const btn = (
-      <button
-        type="button"
-        name={ cardName }
-        onClick={ deleteEvent }
-        data-testid="delete-button"
-      >
-        Excluir
-      </button>
+    const isTrunfo = (
+      <div data-testid="trunfo-card" className="trunfo"> ★ </div>
+    );
+
+    const cardImageRender = (
+      <img
+        src={ cardImage }
+        alt={ cardName }
+        data-testid="image-card"
+        className="agent-image"
+      />
     );
 
     return (
@@ -77,17 +89,11 @@ class Card extends React.Component {
         <p data-testid="rare-card" className="agent-rarity">
           {this.rarityChecker(cardRare)}
         </p>
-        {cardTrunfo ? <p data-testid="trunfo-card"> Super Trunfo </p> : undefined}
-        {deleteButton
-          ? btn
-          : undefined}
+        {cardTrunfo ? isTrunfo : undefined}
         <div className="background-style" />
-        <img
-          src={ cardImage }
-          alt={ cardName }
-          data-testid="image-card"
-          className="agent-image"
-        />
+        { cardImage
+          ? cardImageRender
+          : null}
         <div className="agent-description">
           <p className="agent-description-title">Informações</p>
           <p data-testid="description-card">
@@ -108,8 +114,6 @@ Card.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardClass: PropTypes.string.isRequired,
-  deleteButton: PropTypes.bool.isRequired,
-  deleteEvent: PropTypes.func.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
 };
 

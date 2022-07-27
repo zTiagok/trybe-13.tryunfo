@@ -15,7 +15,6 @@ import Raze from '../Agents/Raze.png';
 import Chamber from '../Agents/Chamber.png';
 import Neon from '../Agents/Neon.png';
 import KAYO from '../Agents/KAYO.png';
-import Fade from '../Agents/Fade.png';
 import Killjoy from '../Agents/Killjoy.png';
 import Cypher from '../Agents/Cypher.png';
 import Omen from '../Agents/Omen.png';
@@ -219,17 +218,6 @@ const agents = (
       cardAttr3={ 7 }
       cardRare="Muito Raro"
       cardImage={ Neon }
-    />
-    {/* Fade */}
-    <Card
-      cardName="Fade"
-      cardDescription="Agente dos Pesadelos"
-      cardClass="Iniciador"
-      cardAttr1={ 3 }
-      cardAttr2={ 10 }
-      cardAttr3={ 8 }
-      cardRare="Muito Raro"
-      cardImage={ Fade }
     />
   </>
   // ATTR1 = VEL / ATTR2 = INT / ATTR3 = TEC

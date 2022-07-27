@@ -11,6 +11,8 @@
 * {
   margin: 0px;
   border: 0px;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 body {
@@ -210,7 +212,7 @@ select {
   text-align: center;
   font-size: 12px;
   z-index: 3;
-  top: -390px;
+  top: -345px;
   word-wrap: break-word;
 }
 
@@ -296,6 +298,220 @@ select {
   border-bottom-right-radius: 5px;
   position: relative;
   top: 190px;
+  z-index: 1;
+}
+
+#card-form .agent-description-title {
+  margin-bottom: 10px;
+  font-weight: 800;
+  color: rgb(211, 15, 64);
+  text-shadow: 0px 2px 5px rgb(211, 15, 64);
+}
+
+#card-form .agent-description-title-noimage {
+  position: relative;
+  top: 445px;
+  margin-bottom: 10px;
+  font-weight: 800;
+  color: rgb(211, 15, 64);
+  text-shadow: 0px 2px 5px rgb(211, 15, 64);
+}
+
+#card-form .agent-image {
+  color: transparent;
+  width: 290px;
+  height: fit-content;
+  top: -280px;
+  left: 55px;
+  position:relative;
+  display: grid;
+  z-index: 0;
+}
+
+#card-form .iniciador {
+  background-image: url(./img/class_iniciador.png);
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -43px;
+  left: 300px;
+  z-index: 1;
+}
+
+#card-form .sentinela {
+  background-image: url(./img/class_sentinela.png);
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -43px;
+  left: 300px;
+  z-index: 1;
+}
+
+#card-form .duelista {
+  background-image: url(./img/class_duelista.png);
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -43px;
+  left: 300px;
+  z-index: 1;
+}
+
+#card-form .controlador {
+  background-image: url(./img/class_controlador.png);
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -43px;
+  left: 300px;
+  z-index: 1;
+}
+
+#card-form .agent-attr {
+  width: 180px;
+  height: 50px;
+  border-top-left-radius: 10px;
+  background-color: rgba(17, 1, 5, 0.918);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  position: relative;
+  top: 233px;
+  left: 150px;
+  padding-left: 20px;
+}
+
+#card-form .agent-attr1 {
+  background-image: url(./Stats/Vel.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 3px;
+  z-index: 1;
+  background-position: 0px;
+}
+
+#card-form .agent-attr1-value {
+  background-color: rgb(211, 15, 64);
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  left: -10px;
+}
+
+#card-form .agent-attr2 {
+  background-image: url(./Stats/Int.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 3px;
+  z-index: 1;
+  background-position: 0px;
+}
+
+#card-form .agent-attr2-value {
+  background-color: rgb(211, 15, 64);
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  left: -10px;
+}
+
+#card-form .agent-attr3 {
+  background-image: url(./Stats/Tec.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 3px;
+  z-index: 1;
+  background-position: 0px;
+}
+
+#card-form .agent-attr3-value {
+  background-color: rgb(211, 15, 64);
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  left: -10px;
+}
+
+#card-form .agent-rarity {
+  color:white;
+  position: relative;
+  left: 120px;
+  top: 345px;
+  width: 120px;
+  text-align: center;
+  z-index: 2;
+  font-size: 10px;
+}
+
+.trunfo {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-bottom: -30px;
+  background-color: white;
+  border-radius: 50px;
+  top: 130px;
+  left: 310px;
+  box-shadow: 0px 0px 10px rgb(71, 2, 2);
+  color: rgb(211, 15, 64);
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+}
+#card-form .normal-rarity {
+  text-shadow: 0px 0px 10px white, 0px 0px 10px white, 0px 0px 10px white;
+}
+
+#card-form .rare-rarity {
+  text-shadow: 0px 0px 10px rgb(255, 145, 0), 0px 0px 10px rgb(255, 145, 0), 0px 0px 10px rgb(255, 145, 0);
+}
+
+#card-form .rarer-rarity {
+  text-shadow: 0px 0px 10px rgb(255, 0, 0), 0px 0px 10px rgb(255, 0, 0), 0px 0px 10px rgb(255, 0, 0);
+}
+
+#card-form .background-style {
+  background-color: rgba(17, 1, 5, 0.918);
+  width: 100%;
+  height: 128px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  position: relative;
+  top: 220px;
   z-index: 1;
 }
 

@@ -29,16 +29,20 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    // this.createAgents();
-  }
-
-  createAgents = () => {
-    this.setState({ cardArray: agentsCards });
-  };
-
   changeState = (origin) => {
     const { target } = origin;
+    const className = 'agent-description-title-noimage';
+
+    if (target.name === 'newAgentPicture') {
+      const form = document.querySelector('#card-form');
+      const description = form.querySelector('.agent-description-title');
+
+      if (description.classList.contains(className)) {
+        description.classList.remove(className);
+      } else {
+        description.classList.add(className);
+      }
+    }
 
     switch (target.name) {
     case 'newAgentName': this.setState({ stateName: target.value });
