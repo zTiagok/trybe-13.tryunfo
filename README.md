@@ -87,7 +87,6 @@
   </h3>
     <br>
     <p> <a href="https://www.betrybe.com/"> Trybe Website </a> </p>
-    <br>
     <p> <a href="https://playvalorant.com/pt-br/"> "What is VALORANT?" </a> </p>
 </div>
 
