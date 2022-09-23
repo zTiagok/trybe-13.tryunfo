@@ -78,10 +78,6 @@
         <td> ReactJS </td>
         <td> 17.0.2 </td>
       </tr>
-      <tr>
-        <td> React Router DOM </td>
-        <td> 17.0.2 </td>
-      </tr>
     </tbody>
   </table>
   <br>
